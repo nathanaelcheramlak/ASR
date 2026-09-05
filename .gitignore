@@ -1,0 +1,35 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+.ruff_cache/
+.pytest_cache/
+
+# Jupyter and editor state
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+# Local secrets and operating-system files
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+
+# Downloaded corpora and generated model artifacts
+data/raw/*
+!data/raw/.gitkeep
+data/manifests/*
+!data/manifests/.gitkeep
+data/audio/*
+!data/audio/.gitkeep
+artifacts/*
+!artifacts/.gitkeep
+checkpoints/
+*.pt
+*.safetensors
