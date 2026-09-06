@@ -1,0 +1,26 @@
+# Relative paths resolve against the project root, not the notebook directory.
+# These files are supplied by you; no audio or manifests ship with the repository.
+[paths]
+train_manifest = "data/manifests/train.jsonl"
+validation_manifest = "data/manifests/validation.jsonl"
+audio_dir = "data/audio"
+processor_dir = "artifacts/processor"
+run_dir = "artifacts/runs/baseline"
+
+[model]
+name_or_path = "facebook/wav2vec2-xls-r-300m"
+sample_rate = 16000
+unfrozen_layers = 2
+gradient_checkpointing = true
+
+[training]
+seed = 42
+epochs = 3
+batch_size = 1
+head_learning_rate = 0.0001
+encoder_learning_rate = 0.000002
+weight_decay = 0.0
+max_gradient_norm = 1.0
+device = "auto"
+# Matches the later controlled experiments: gradients enabled, dropout/SpecAugment disabled.
+disable_stochastic_layers = true
